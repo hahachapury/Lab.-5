@@ -21,10 +21,11 @@ email = re.findall(r'[\w\.-]+@[\w\.-]+',st)
 url =  re.findall( r'https?://[^\s]+', st)
 surname = re.findall(r'[A-Z][a-z]+',st)
 
-with open('task3.csv', mode = 'w', newline='') as csvfile:
+with open('task3.csv', mode = 'w', encoding='utf-8', newline='') as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(['ID','Фамилия','Почта','Дата','Сайт'])
     for i in range(len(date)):
         writer.writerow([str(i+1),surname[i],email[i],date[i],url[i]])
+
 
 print('file done')
